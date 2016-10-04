@@ -8,17 +8,7 @@ def print_wordcount(filename):
     with open(filename) as text:
 
         for line in text: 
-            line = line.strip([" ", 
-                                ",", 
-                                ".", 
-                                ":", 
-                                ";",
-                                "\"",
-                                "'",
-                                "?",
-                                "!",
-                                "(",
-                                ")"])
+            line = line.strip([ ,.:;?!()])
             word_list = line.split()
 
             for word in word_list:
