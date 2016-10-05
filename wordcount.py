@@ -16,22 +16,14 @@ def print_wordcount(filename):
             word_list = line.split()
 
             for word in word_list:
-                # FORMAT WORD
+
+                word = ''.join(char for char in word if char.isalnum())
+                word = word.lower()
+
                 dict_word_counts[word] = dict_word_counts.get(word, 0) + 1
 
     for word, count in dict_word_counts.iteritems():
         print "%s: %d" % (word, count)
-
-def format_word(word):
-    
-    evil_chars = (",", "'")
-
-    for char in word:
-        print char
-        if char in evil_chars:
-            print char
-        else:
-            print "Skip"
 
 
 # print_wordcount(filename)
